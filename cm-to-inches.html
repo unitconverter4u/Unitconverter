@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CM to Inches Converter – Quick & Easy</title>
+  <meta name="description" content="Convert centimeters to inches instantly with our free online converter. Accurate, fast, and mobile-friendly." />
+  <meta name="keywords" content="cm to inches, convert cm to inches, centimeters to inches" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      text-align: center;
+      padding: 40px;
+    }
+    .converter {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, button {
+      font-size: 16px;
+      padding: 10px;
+      margin: 10px 0;
+      width: 200px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="converter">
+    <h1>Centimeters to Inches Converter</h1>
+    <p>Enter value in centimeters:</p>
+    <input type="number" id="cmInput" placeholder="e.g. 100" />
+    <br>
+    <button onclick="convertCmToInches()">Convert</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function convertCmToInches() {
+      const cm = parseFloat(document.getElementById("cmInput").value);
+      if (!isNaN(cm)) {
+        const inches = cm / 2.54;
+        document.getElementById("result").innerText = `${cm} cm = ${inches.toFixed(2)} inches`;
+      } else {
+        document.getElementById("result").innerText = "Please enter a valid number";
+      }
+    }
+  </script>
+
+</body>
+</html>
