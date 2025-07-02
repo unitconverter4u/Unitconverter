@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KG to Pounds Converter – Fast & Accurate | UnitConverter4u</title>
+  <meta name="description" content="Convert kilograms to pounds instantly using this free online converter. Fast, accurate, and easy to use. No login needed!" />
+  <meta name="keywords" content="kg to pounds, kilograms to pounds, weight converter, kg to lbs, unit converter" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Convert KG to Pounds – UnitConverter4u</h1>
+    <p>Quickly convert kilograms to pounds (lbs) with our simple tool below.</p>
+  </header>
+
+  <div class="converter-container">
+    <section class="converter">
+      <h2>KG to Pounds Converter</h2>
+      <label for="kgInput">Enter weight in kilograms:</label>
+      <input type="number" id="kgInput" placeholder="e.g. 50" />
+      <button onclick="convertKgToPounds()">Convert</button>
+      <p id="kgResult"></p>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 UnitConverter4u – All rights reserved</p>
+  </footer>
+
+  <script>
+    function convertKgToPounds() {
+      const kg = parseFloat(document.getElementById("kgInput").value);
+      if (!isNaN(kg)) {
+        const pounds = kg * 2.20462;
+        document.getElementById("kgResult").innerText = `${kg} kg = ${pounds.toFixed(2)} pounds`;
+      } else {
+        document.getElementById("kgResult").innerText = "Please enter a valid number.";
+      }
+    }
+  </script>
+</body>
+</html>
