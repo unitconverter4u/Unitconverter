@@ -1,40 +1,36 @@
-/* Reset default margin and padding */
+/* Reset default styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body Styling */
+/* Base styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #f4f6fa;
   color: #333;
+  line-height: 1.6;
   padding: 20px;
 }
 
-/* Header Styling */
+/* Header */
 header {
   text-align: center;
   margin-bottom: 30px;
 }
 
-h1 {
+header h1 {
   font-size: 2.5rem;
-  color: #333;
-}
-
-h2, h3 {
   color: #007bff;
-  margin-bottom: 10px;
 }
 
-p {
-  font-size: 1rem;
+header p {
+  font-size: 1.1rem;
   color: #555;
 }
 
-/* Navigation Styling */
+/* Navigation */
 nav {
   text-align: center;
   margin-bottom: 30px;
@@ -42,24 +38,26 @@ nav {
 
 nav ul {
   list-style: none;
+  padding: 0;
 }
 
 nav li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 12px;
 }
 
 nav a {
   text-decoration: none;
   color: #007bff;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: #0056b3;
 }
 
-/* Container for converters */
+/* Converter layout */
 .converter-container {
   display: flex;
   justify-content: center;
@@ -67,71 +65,75 @@ nav a:hover {
   gap: 20px;
 }
 
-/* Styling for each converter section */
+/* Individual converter card */
 .converter {
-  background-color: #fff;
-  padding: 20px;
-  width: 280px;
+  background: #fff;
+  padding: 20px 25px;
+  width: 300px;
   border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   text-align: center;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease;
 }
 
 .converter:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
 }
 
-/* Input and Select box styling */
+/* Inputs and selects */
 input, select {
   width: 100%;
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px 0 15px 0;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
 }
 
-/* Result text */
-.converter p {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #333;
-}
-
-/* Button Styling (if added) */
+/* Button */
 button {
-  padding: 10px 15px;
   background-color: #007bff;
-  color: white;
+  color: #fff;
   border: none;
+  padding: 10px 18px;
   border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
+  transition: background 0.3s ease;
 }
 
 button:hover {
   background-color: #0056b3;
 }
 
-/* Footer Styling */
-footer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: #888;
+/* Result */
+.converter p {
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-/* Responsive for small screens */
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Responsive design */
 @media (max-width: 600px) {
-  h1 {
+  header h1 {
     font-size: 2rem;
   }
+
   .converter {
     width: 90%;
   }
+
   nav li {
     display: block;
-    margin: 10px 0;
+    margin: 8px 0;
   }
 }
