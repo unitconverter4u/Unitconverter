@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comment Section – UnitConverter4u</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .comment-box {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .comment-box input, .comment-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    .comment-box button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .comment-box button:hover {
+      background-color: #0056b3;
+    }
+    .comments {
+      margin-top: 30px;
+    }
+    .comment {
+      background: #f4f6fa;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .comment strong {
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Leave a Comment</h1>
+    <p>Share your thoughts or questions below. YouTube links will become clickable.</p>
+  </header>
+
+  <div class="comment-box">
+    <input type="text" id="name" placeholder="Your name" />
+    <textarea id="comment" rows="4" placeholder="Your comment..."></textarea>
+    <button onclick="postComment()">Post Comment</button>
+
+    <div class="comments" id="comments"></div>
+  </div>
+
+  <script>
+    // Escape HTML to prevent script injection
+    function escapeHTML(text) {
+      return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+    }
+
+    // Convert YouTube-like links into safe clickable links
+    function linkify(text) {
+      return text.replace(/(https?:\/\/[^\s]+)/g, function(url) {
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+      });
+    }
+
+    function postComment() {
+      const name = escapeHTML(document.getElementById("name").value.trim());
+      const rawComment = document.getElementById("comment").value.trim();
+
+      if (!name || !rawComment) {
+        alert("Please fill in both fields.");
+        return;
+      }
+
+      const safeComment = escapeHTML(rawComment);
+      const linkedComment = linkify(safeComment);
+
+      const commentSection = document.getElementById("comments");
+      const commentDiv = document.createElement("div");
+      commentDiv.classList.add("comment");
+      commentDiv.innerHTML = `<strong>${name}</strong><br>${linkedComment}`;
+      commentSection.prepend(commentDiv);
+
+      document.getElementById("name").value = '';
+      document.getElementById("comment").value = '';
+    }
+  </script>
+</body>
+</html>
