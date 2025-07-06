@@ -19,5 +19,5 @@ const timer = setInterval(() => {
 
 // Button click → redirect to Page 2
 continueBtn.addEventListener("click", () => {
-  window.location.href = "#"; // Replace # with actual Page 2 URL later
+  window.location.href = "#"; // Replace with your Page 2 link later
 });
