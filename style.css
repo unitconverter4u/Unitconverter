@@ -1,139 +1,55 @@
-/* Reset default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Base styles */
 body {
-  font-family: 'Segoe UI', Roboto, sans-serif;
-  background-color: #f4f6fa;
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
   color: #333;
-  line-height: 1.6;
-  padding: 20px;
-}
-
-/* Header */
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  color: #007bff;
-}
-
-header p {
-  font-size: 1.1rem;
-  color: #555;
-}
-
-/* Navigation */
-nav {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav li {
-  display: inline-block;
-  margin: 0 12px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #0056b3;
-}
-
-/* Converter layout */
-.converter-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-/* Individual converter card */
-.converter {
-  background: #fff;
-  padding: 20px 25px;
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
   text-align: center;
-  transition: transform 0.2s ease;
 }
 
-.converter:hover {
-  transform: translateY(-5px);
+.container {
+  padding: 20px;
+  max-width: 500px;
 }
 
-/* Inputs and selects */
-input, select {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0 15px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-/* Button */
+#countdown {
+  font-size: 1.2rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+#scrollPrompt {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+#continueSection {
+  margin-top: 40px;
+}
+
 button {
+  padding: 12px 24px;
   background-color: #007bff;
-  color: #fff;
+  color: white;
+  font-size: 1rem;
   border: none;
-  padding: 10px 18px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s ease;
 }
 
 button:hover {
   background-color: #0056b3;
 }
 
-/* Result */
-.converter p {
-  font-size: 1rem;
-  color: #333;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  margin-top: 50px;
-  font-size: 0.9rem;
-  color: #777;
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
-  .converter {
-    width: 90%;
-  }
-
-  nav li {
-    display: block;
-    margin: 8px 0;
-  }
+.hidden {
+  display: none;
 }
