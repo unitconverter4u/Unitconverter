@@ -2,130 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="google-site-verification" content="qnTfi3Kvb967hyFTASSISYBdhbgvKx_5ZM0pd_8qQD4" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Free online unit converter for length, weight, temperature, and more. Fast and accurate conversions. Try UnitConverter4u now." />
-  <meta name="keywords" content="unit converter, cm to inches, kg to pounds, temperature converter, unitconverter4u" />
-  <title>Unit Converter | Free Online Converter - UnitConverter4u</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Redirecting... Please Wait</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <header>
-    <h1>Free Online Unit Converter – UnitConverter4u</h1>
-    <p>Convert length, weight, temperature and more with our fast and easy converter tools.</p>
-  </header>
-
-  <nav>
-    <h3>Popular Conversions</h3>
-    <ul>
-      <li><a href="cm-to-inches.html">Convert CM to Inches</a></li>
-      <li><a href="kg-to-pounds.html">Convert KG to Pounds</a></li>
-      <li><a href="fahrenheit-to-celsius.html">Convert F to C</a></li>
-      <li><a href="comment-box.html">Open Comments Page</a></li>
-    </ul>
-  </nav>
-
-  <div class="converter-container">
-    <!-- Length Converter -->
-    <section class="converter">
-      <h2>Length Converter</h2>
-      <label for="length">Enter value (meters):</label>
-      <input type="number" id="length" placeholder="Value in meters" />
-      <select id="length-units">
-        <option value="meters">Meters</option>
-        <option value="kilometers">Kilometers</option>
-        <option value="centimeters">Centimeters</option>
-        <option value="inches">Inches</option>
-        <option value="feet">Feet</option>
-      </select>
-      <p id="length-result"></p>
-    </section>
-
-    <!-- Temperature Converter -->
-    <section class="converter">
-      <h2>Temperature Converter</h2>
-      <label for="temperature">Enter value (Celsius):</label>
-      <input type="number" id="temperature" placeholder="Value in Celsius" />
-      <p id="temp-result"></p>
-    </section>
+  <div class="container">
+    <h1>Please wait, preparing content...</h1>
+    <p id="countdown">Redirecting in 20 seconds...</p>
+    
+    <div id="scrollPrompt" class="hidden">
+      <p>Scroll down and click the button to continue</p>
+    </div>
+    
+    <div id="continueSection" class="hidden">
+      <button id="continueBtn">Continue</button>
+    </div>
   </div>
 
-  <!-- Comment Section -->
-  <section class="comment-box">
-    <h2>Leave a Comment</h2>
-    <input type="text" id="name" placeholder="Your name" />
-    <textarea id="comment" rows="4" placeholder="Your comment..."></textarea>
-    <button onclick="postComment()">Post Comment</button>
-    <div class="comments" id="comments"></div>
-  </section>
-
-  <footer>
-    <p>© 2025 UnitConverter4u – All rights reserved</p>
-  </footer>
-
-  <script>
-    // Length converter logic
-    document.getElementById("length-units").addEventListener("change", () => {
-      const input = parseFloat(document.getElementById("length").value);
-      const unit = document.getElementById("length-units").value;
-      let result = "";
-
-      if (!isNaN(input)) {
-        switch (unit) {
-          case "meters": result = `${input} meters`; break;
-          case "kilometers": result = `${input * 0.001} kilometers`; break;
-          case "centimeters": result = `${input * 100} centimeters`; break;
-          case "inches": result = `${input * 39.3701} inches`; break;
-          case "feet": result = `${input * 3.28084} feet`; break;
-        }
-        document.getElementById("length-result").innerText = result;
-      }
-    });
-
-    // Temperature converter
-    document.getElementById("temperature").addEventListener("input", () => {
-      const c = parseFloat(document.getElementById("temperature").value);
-      if (!isNaN(c)) {
-        const f = (c * 9 / 5) + 32;
-        document.getElementById("temp-result").innerText = `${c}°C = ${f.toFixed(2)}°F`;
-      }
-    });
-
-    // Comment section logic
-    function escapeHTML(text) {
-      return text.replace(/&/g, "&amp;")
-                 .replace(/</g, "&lt;")
-                 .replace(/>/g, "&gt;");
-    }
-
-    function linkify(text) {
-      return text.replace(/(https?:\/\/[^\s]+)/g, function (url) {
-        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
-      });
-    }
-
-    function postComment() {
-      const name = escapeHTML(document.getElementById("name").value.trim());
-      const rawComment = document.getElementById("comment").value.trim();
-
-      if (!name || !rawComment) {
-        alert("Please fill in both fields.");
-        return;
-      }
-
-      const safeComment = escapeHTML(rawComment);
-      const linkedComment = linkify(safeComment);
-
-      const commentSection = document.getElementById("comments");
-      const commentDiv = document.createElement("div");
-      commentDiv.classList.add("comment");
-      commentDiv.innerHTML = `<strong>${name}</strong><br>${linkedComment}`;
-      commentSection.prepend(commentDiv);
-
-      document.getElementById("name").value = '';
-      document.getElementById("comment").value = '';
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
