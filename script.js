@@ -23,11 +23,13 @@ if (fromPage2) {
     }
   }, 1000);
 
+  // ✅ Redirect to Page 2 with return=1
   continueBtn.addEventListener("click", () => {
-    window.location.href = "https://techupdates.github.io/Page2"; // Replace with actual Page 2 link
+    window.location.href = "https://nologytech.github.io/Techupdates/?return=1";
   });
 }
 
+// Optional: Keep converters working
 document.getElementById("length").addEventListener("input", convertLength);
 document.getElementById("length-units").addEventListener("change", convertLength);
 function convertLength() {
