@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Unit Converter</h1>
+    <p>Select a category and convert units</p>
+    <div id="timerContainer" class="hidden">
+      <p id="countdown">Redirecting in 20 seconds...</p>
+      <p id="scrollPrompt" class="hidden">Scroll down and click the continue button</p>
+    </div>
+  </header>
+
+  <div class="converter-container">
+    <!-- Length Converter -->
+    <section class="converter">
+      <h2>Length Converter</h2>
+      <label for="length">Enter value (meters):</label>
+      <input type="number" id="length" placeholder="Value in meters">
+      <select id="length-units">
+        <option value="meters">Meters</option>
+        <option value="kilometers">Kilometers</option>
+        <option value="centimeters">Centimeters</option>
+        <option value="inches">Inches</option>
+        <option value="feet">Feet</option>
+      </select>
+      <p id="length-result"></p>
+    </section>
+
+    <!-- Temperature Converter -->
+    <section class="converter">
+      <h2>Temperature Converter</h2>
+      <label for="temperature">Enter value (Celsius):</label>
+      <input type="number" id="temperature" placeholder="Value in Celsius">
+      <p id="temp-result"></p>
+    </section>
+
+    <!-- Weight Converter -->
+    <section class="converter">
+      <h2>Weight Converter</h2>
+      <label for="weight">Enter value (kg):</label>
+      <input type="number" id="weight" placeholder="Value in kg">
+      <p id="weight-result"></p>
+    </section>
+  </div>
+
+  <!-- Continue Button at Bottom -->
+  <div id="continueSection" class="hidden bottom-button">
+    <button id="continueBtn">Continue</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
